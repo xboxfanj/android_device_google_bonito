@@ -63,9 +63,9 @@ $(call inherit-product, $(LOCAL_PATH)/utils.mk)
 # Installs gsi keys into ramdisk, to boot a GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
-#ifeq ($(wildcard vendor/google_devices/bonito/proprietary/device-vendor-bonito.mk),)
-#    BUILD_WITHOUT_VENDOR := true
-#endif
+ifeq ($(wildcard vendor/google_devices/bonito/proprietary/device-vendor-bonito.mk),)
+    BUILD_WITHOUT_VENDOR := true
+endif
 
 PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_SHIPPING_API_LEVEL := 28
@@ -859,10 +859,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Increment the SVN for any official public releases
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.vendor.build.svn=12
-
-# Build vendor img
-AB_OTA_PARTITIONS += \
-    vendor
 
 # EUICC
 PRODUCT_COPY_FILES += \
