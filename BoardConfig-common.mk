@@ -234,4 +234,6 @@ TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CONFIG := pa_bonito_defconfig
 TARGET_KERNEL_SOURCE := kernel/google/msm-4.9
 
+TARGET_EXCLUDE_QCOM_SEPOLICY := true
+
 -include vendor/google/bonito/BoardConfigVendor.mk
